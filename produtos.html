@@ -1,6 +1,6 @@
 
 <head>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Página de Produtos</title>
 </head>
 
@@ -9,8 +9,8 @@
     <div class="containerProdutos" style="background-image: url('images/bg-01.jpg');">
       <div class="produto">
         <div class="cabeca">
-            <button onclick="finalizarSessao()" id="finalizar" class="voltarBTN">Finalizar sessão</button>
-            <h2 class="cabecalho11">PRODUTOS</h2>
+          <button onclick="finalizarSessao()" id="finalizar" class="voltarBTN">Finalizar sessão</button>
+          <h2 class="cabecalho11">PRODUTOS</h2>
         </div>
         
         <div class="produtos">
@@ -31,17 +31,20 @@
           </div>
           
           <div class="produto-item">
-            <img class = "imagemBM" src="images/brunoEmarrone.jpg" alt="Product 3">
+            <img class="imagemBM" src="images/brunoEmarrone.jpg" alt="Product 3">
             <h3 class="produto-titulo">Show</h3>
             <p class="produto-descricao" id="apre6"></p>
             <p class="produto-preco" id="data6"></p>
             <button onclick="produto3()" id="comprar3" class="loginBTN">Comprar</button>
           </div>
-          <div class="divCarrinho"><button onclick="carrinho()" id="btnCarrinho" class="carrinhoBTN">Ir para o carrinho</button></div>
+          <div class="divCarrinho">
+            <button onclick="carrinho()" id="btnCarrinho" class="carrinhoBTN">Ir para o carrinho</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
   <script src="./javascript/dados.js"></script>
   <script src="./javascript/redirecionamento.js"></script>
   <script src="./javascript/sessao.js"></script>

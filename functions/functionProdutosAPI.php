@@ -1,44 +1,37 @@
 <?php
 
 function produtosAPI(){
-    // URL da sua API
+
     $url = 'https://ah.we.imply.com/produtosCopetti';
 
-    // Dados a serem enviados para a API (se necessário)
     $data = array(
         'param1' => 'valor1',
         'param2' => 'valor2'
     );
 
-    // Configuração do CURL
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-    // Envia os dados como POST, se houver
+
     if (!empty($data)) {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     }
 
-    // Executa a requisição CURL
     $response = curl_exec($ch);
 
-    // Verifica se houve algum erro na requisição
     if ($response === false) {
         $error = curl_error($ch);
-        // Trate o erro de acordo com suas necessidades
-        // por exemplo, exiba uma mensagem de erro ou registre o erro em log
+    
         return "Erro na requisição: " . $error;
     } else {
-        // Processa a resposta da API
         // Transforma de json para objeto stdClass
         $responseObj = json_decode($response);
         $result = $responseObj->result;
         return $result;
     }
 
-    // Fecha a conexão CURL
     curl_close($ch);
 }
 

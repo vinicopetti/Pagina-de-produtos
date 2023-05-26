@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evitar o envio padrão do formulário
     const cpf = document.getElementById('cpf').value;
     const email = document.getElementById('email').value;
-  
+
     fetch('validacaoCampos.php', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded' // formato utilizado para enviar dados de formulário em requisições HTTP.
       },
       body: `cpf=${cpf}&email=${email}`
     })
@@ -34,11 +32,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
           document.getElementById('acesso').textContent = '';
           location.reload();
         }, 3000);
-       
       }
       if(data == "Acesso permitido") {
         window.location.href = "produtos.html";
-        
       }
     })
     .catch(error => {

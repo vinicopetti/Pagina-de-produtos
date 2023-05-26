@@ -16,7 +16,7 @@ $_SESSION['logged_in'] = false;
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<!--===============================================================================================-->
 	
 </head>

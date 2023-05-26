@@ -14,13 +14,17 @@ $url = 'https://ah.we.imply.com/apiCopetti';
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, $url);
+// configura o cURL para retornar a resposta da requisição como uma string
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
+//  define os dados que serão enviados no corpo da requisição POST
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+// desativa a verificação ssl
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 
 $response = curl_exec($ch);
+
 
 if(curl_errno($ch)){
     $error_message = curl_error($ch);
@@ -30,14 +34,21 @@ if(curl_errno($ch)){
 
 curl_close($ch);
 
-/* $reponse armazena uma string, para acessar o valor de 'result' é preciso transformar em
-    objeto stdClass */
+
 
 $responseObj = json_decode($response);
+/*
+stdClass Object
+(
+    [id] => 
+    [error] => 
+    [result] => 1
+)
+*/
 
-// $result (objeto da classe stdClass) armazena true ou false
-// true caso a pessoa esteja no cadastro --- false caso a pessoa nao esteja cadastrada
 $result = $responseObj->result; 
 
 return $result;
 }
+
+

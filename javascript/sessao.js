@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
        } else if(data.status == 'erro') {
             console.log(data.mensagem);
-            window.location.href = "index.php";
+            window.location.href = "login.php";
        } 
       })
       .catch(error => {

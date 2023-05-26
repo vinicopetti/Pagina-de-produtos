@@ -24,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($cpf)) {
             echo ('Por favor, preencha o campo CPF');
         } 
-        
         if (validaCPF($cpf) == false && $cpf != null) {
             echo ('Insira um CPF existente');
         }

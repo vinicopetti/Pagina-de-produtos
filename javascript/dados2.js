@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('chamaAPIProdutos.php')
+    fetch('validaAPIProdutos.php')
       .then(response => response.json())
       .then(data => {
         
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('ingresso4').textContent = data.ingresso4;
         document.getElementById('preco4').textContent = data.preco4;
         document.getElementById('ingresso5').textContent = data.ingresso5;
-        document.getElementById('preco5').textContent = data.preco5;  // nao esta sendo usado ainda
+        document.getElementById('preco5').textContent = data.preco5;  
 
        
       })

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('chamaAPIProdutos.php')
+    fetch('validaAPIProdutos.php')
       .then(response => response.json())
       .then(data => {
 
